@@ -13,7 +13,7 @@ app.use(express.json());
 
 // Password=sBkizWrOWI4u1H7C
 
-const uri = "mongodb+srv://Milton839:sBkizWrOWI4u1H7C@cluster0.cf5ms.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const uri = `mongodb+srv://${process.env.DB_User}:${process.env.DB_Password}@cluster0.cf5ms.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 async function run() {
